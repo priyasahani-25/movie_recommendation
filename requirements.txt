@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+pymongo
+motor
+pandas
+opencv-python
+ultralytics
+insightface
+onnxruntime
+python-multipart
+pydantic-settings
+requests
+numpy

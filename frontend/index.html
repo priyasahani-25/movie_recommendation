@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Movie Recommender</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI Movie Recommender</h1>
+            <p>Upload a photo of an actor to get their top 10 highest-rated movies.</p>
+        </header>
+
+        <main>
+            <section class="upload-section">
+                <div class="upload-area" id="uploadArea">
+                    <input type="file" id="fileInput" accept="image/jpeg, image/png, image/jpg" hidden>
+                    <div class="upload-content" id="uploadContent">
+                        <svg class="upload-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+                        </svg>
+                        <span>Click to upload or drag & drop</span>
+                        <span class="sub-text">PNG, JPG or JPEG</span>
+                    </div>
+                    <img id="imagePreview" src="" alt="Preview" class="hidden">
+                </div>
+                <button id="predictBtn" class="btn-primary" disabled>Find Movies</button>
+                <div id="loading" class="loading hidden">
+                    <div class="spinner"></div>
+                    <span>Analyzing face...</span>
+                </div>
+            </section>
+
+            <section id="resultsSection" class="results-section hidden">
+                <h2>Recognized: <span id="actorName" class="highlight"></span></h2>
+                <div class="movies-grid" id="moviesGrid">
+                    <!-- Movie cards will be injected here -->
+                </div>
+            </section>
+
+            <div id="errorMessage" class="error-message hidden"></div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
